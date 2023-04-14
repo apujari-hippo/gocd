@@ -2,7 +2,7 @@
   "format_version" : 1,
   "name": "my-third-pipeline",
   "environment_variables": [],
-  "group" : "configrepo-example",
+  "group" : "defaultGroup",
   "materials": [
     {
       "url": "https://github.com/apujari-hippo/gocd.git",
