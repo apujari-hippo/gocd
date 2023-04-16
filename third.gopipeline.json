@@ -6,7 +6,8 @@
   "materials": [
     {
       "url": "https://github.com/apujari-hippo/gocd.git",
-      "type": "git"
+      "type": "git",
+      "branch": "main"
     }
   ],
   "stages": [
