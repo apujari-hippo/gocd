@@ -1,5 +1,5 @@
 {
-  "group": "my-Group",
+  "group": "defaultGroup",
   "name": "deploy-service",
   "display_order_weight": -1.0,
   "label_template": "${COUNT}",
