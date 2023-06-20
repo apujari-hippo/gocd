@@ -9,7 +9,7 @@
   "materials": [
     {
       "url": "https://github.com/apujari-hippo/gocd.git",
-      "branch": "master",
+      "branch": "main",
       "shallow_clone": false,
       "filter": {
         "ignore": [],
