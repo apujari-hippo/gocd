@@ -49,15 +49,6 @@
               ],
               "run_if": "passed",
               "type": "exec"
-            },
-            {
-              "command": "serengeti-release",
-              "timeout": -1.0,
-              "arguments": [
-                "deploy"
-              ],
-              "run_if": "passed",
-              "type": "exec"
             }
           ]
         }
