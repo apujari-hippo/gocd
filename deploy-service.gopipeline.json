@@ -49,6 +49,15 @@
               ],
               "run_if": "passed",
               "type": "exec"
+            },
+            {
+              "command": "echo",
+              "timeout": -1.0,
+              "arguments": [
+                "Count: ${COUNT}"
+              ],
+              "run_if": "passed",
+              "type": "exec"
             }
           ]
         }
