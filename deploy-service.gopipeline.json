@@ -6,19 +6,7 @@
   "lock_behavior": "none",
   "environment_variables": [],
   "parameters": [],
-  "materials": [
-    {
-      "url": "https://github.com/apujari-hippo/gocd.git",
-      "branch": "master",
-      "shallow_clone": false,
-      "filter": {
-        "ignore": [],
-        "includes": []
-      },
-      "auto_update": true,
-      "type": "git"
-    }
-  ],
+  "materials": [],
   "stages": [
     {
       "name": "Test",
