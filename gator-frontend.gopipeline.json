@@ -1,5 +1,5 @@
 {
-  "group": "dev",
+  "group": "staging",
   "name": "gator-frontend",
   "display_order_weight": -1.0,
   "label_template": "${COUNT}",
