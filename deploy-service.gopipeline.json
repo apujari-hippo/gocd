@@ -49,7 +49,17 @@
               ],
               "run_if": "passed",
               "type": "exec"
-            },
+            }
+          ]
+        },
+        {
+          "name": "counting",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
             {
               "command": "echo",
               "timeout": -1.0,
