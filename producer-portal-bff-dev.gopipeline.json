@@ -1,6 +1,6 @@
 {
   "group": "dev",
-  "name": "producer-portal-bff",
+  "name": "producer-portal-bff-dev",
   "display_order_weight": -1.0,
   "label_template": "${COUNT}",
   "lock_behavior": "none",
