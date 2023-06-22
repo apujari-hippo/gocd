@@ -53,7 +53,7 @@
           ]
         },
         {
-          "name": "counting",
+          "name": "environments",
           "environment_variables": [],
           "tabs": [],
           "resources": [],
@@ -61,11 +61,9 @@
           "timeout": 0.0,
           "tasks": [
             {
-              "command": "echo",
+              "command": "env",
               "timeout": -1.0,
-              "arguments": [
-                "Count: ${COUNT}"
-              ],
+              "arguments": [],
               "run_if": "passed",
               "type": "exec"
             }
