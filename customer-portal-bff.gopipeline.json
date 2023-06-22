@@ -104,7 +104,7 @@
           ]
         },
         {
-          "name": "environments",
+          "name": "environments ${GO_TO_REVISION}",
           "environment_variables": [],
           "tabs": [],
           "resources": [],
