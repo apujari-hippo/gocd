@@ -70,6 +70,57 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Build",
+      "fetch_materials": true,
+      "never_cleanup_artifacts": false,
+      "clean_working_directory": false,
+      "approval": {
+        "type": "success",
+        "users": [],
+        "roles": [],
+        "allow_only_on_success": false
+      },
+      "environment_variables": [],
+      "jobs": [
+        {
+          "name": "echoing",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "echo",
+              "timeout": -1.0,
+              "arguments": [
+                "Deploying"
+              ],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        },
+        {
+          "name": "environments",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "env",
+              "timeout": -1.0,
+              "arguments": [],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
