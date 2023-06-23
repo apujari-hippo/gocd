@@ -8,6 +8,17 @@
   "parameters": [],
   "materials": [
     {
+      "url": "https://github.com/apujari-hippo/gocd.git",
+      "branch": "main",
+      "shallow_clone": true,
+      "filter": {
+        "ignore": [],
+        "includes": []
+      },
+      "auto_update": true,
+      "type": "git"
+    },
+    {
       "pipeline": "my-service",
       "stage": "Deploy",
       "ignore_for_scheduling": false,
