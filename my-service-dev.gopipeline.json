@@ -8,6 +8,7 @@
   "parameters": [],
   "materials": [
     {
+      "name": "git",
       "url": "https://github.com/apujari-hippo/gocd.git",
       "branch": "main",
       "shallow_clone": true,
