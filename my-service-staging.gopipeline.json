@@ -1,0 +1,64 @@
+{
+  "group": "defaultGroup",
+  "name": "my-service-staging",
+  "display_order_weight": -1.0,
+  "label_template": "${COUNT}",
+  "lock_behavior": "none",
+  "environment_variables": [],
+  "parameters": [],
+  "materials": [
+    {
+      "name": "git",
+      "url": "https://github.com/apujari-hippo/gocd.git",
+      "branch": "main",
+      "shallow_clone": true,
+      "filter": {
+        "ignore": [],
+        "includes": []
+      },
+      "auto_update": true,
+      "type": "git"
+    },
+    {
+      "pipeline": "my-service-dev",
+      "stage": "deploy",
+      "ignore_for_scheduling": false,
+      "name": "my-service-dev",
+      "type": "dependency"
+    }
+  ],
+  "stages": [
+    {
+      "name": "deploy",
+      "fetch_materials": true,
+      "never_cleanup_artifacts": false,
+      "clean_working_directory": false,
+      "approval": {
+        "type": "success",
+        "users": [],
+        "roles": [],
+        "allow_only_on_success": false
+      },
+      "environment_variables": [],
+      "jobs": [
+        {
+          "name": "deploy-service",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "env",
+              "timeout": -1.0,
+              "arguments": [],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
