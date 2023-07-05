@@ -32,7 +32,27 @@
         "allow_only_on_success": false
       },
       "environment_variables": [],
-      "jobs": []
+      "jobs": [
+        {
+          "name": "RC",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "echo",
+              "timeout": -1.0,
+              "arguments": [
+                "Deploying"
+              ],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "READY-FOR-DEV",
@@ -46,7 +66,27 @@
         "allow_only_on_success": false
       },
       "environment_variables": [],
-      "jobs": []
+      "jobs": [
+        {
+          "name": "RC",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "echo",
+              "timeout": -1.0,
+              "arguments": [
+                "READY-FOR-DEV"
+              ],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "DEPLOYED-TO-DEV",
@@ -60,7 +100,27 @@
         "allow_only_on_success": false
       },
       "environment_variables": [],
-      "jobs": []
+      "jobs": [
+        {
+          "name": "DEPLOYED-TO-DEV",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "echo",
+              "timeout": -1.0,
+              "arguments": [
+                "READY-FOR-DEV"
+              ],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "READY-FOR-STAGING",
@@ -74,7 +134,27 @@
         "allow_only_on_success": false
       },
       "environment_variables": [],
-      "jobs": []
+      "jobs": [
+        {
+          "name": "READY-FOR-STAGING",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "echo",
+              "timeout": -1.0,
+              "arguments": [
+                "READY-FOR-DEV"
+              ],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "DEPLOYED-TO-STAGING",
@@ -88,7 +168,27 @@
         "allow_only_on_success": false
       },
       "environment_variables": [],
-      "jobs": []
+      "jobs": [
+        {
+          "name": "DEPLOYED-TO-STAGING",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "echo",
+              "timeout": -1.0,
+              "arguments": [
+                "READY-FOR-DEV"
+              ],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "READY-FOR-PRODCOPY",
@@ -102,7 +202,27 @@
         "allow_only_on_success": false
       },
       "environment_variables": [],
-      "jobs": []
+      "jobs": [
+        {
+          "name": "READY-FOR-PRODCOPY",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "echo",
+              "timeout": -1.0,
+              "arguments": [
+                "READY-FOR-DEV"
+              ],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "DEPLOYED-TO-PRODCOPY",
@@ -116,7 +236,27 @@
         "allow_only_on_success": false
       },
       "environment_variables": [],
-      "jobs": []
+      "jobs": [
+        {
+          "name": "DEPLOYED-TO-PRODCOPY",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "echo",
+              "timeout": -1.0,
+              "arguments": [
+                "READY-FOR-DEV"
+              ],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "READY-FOR-PROD",
@@ -130,7 +270,27 @@
         "allow_only_on_success": false
       },
       "environment_variables": [],
-      "jobs": []
+      "jobs": [
+        {
+          "name": "READY-FOR-PROD",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "echo",
+              "timeout": -1.0,
+              "arguments": [
+                "READY-FOR-DEV"
+              ],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "DEPLOYED-TO-PROD",
@@ -144,7 +304,27 @@
         "allow_only_on_success": false
       },
       "environment_variables": [],
-      "jobs": []
+      "jobs": [
+        {
+          "name": "DEPLOYED-TO-PROD",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "echo",
+              "timeout": -1.0,
+              "arguments": [
+                "READY-FOR-DEV"
+              ],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
