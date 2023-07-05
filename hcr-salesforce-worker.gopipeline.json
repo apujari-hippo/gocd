@@ -308,7 +308,7 @@
         {
           "name": "DEPLOYED-TO-PROD",
           "environment_variables": [],
-          "tabs": [],
+          "tabs": ["FBR"],
           "resources": [],
           "artifacts": [],
           "timeout": 0.0,
