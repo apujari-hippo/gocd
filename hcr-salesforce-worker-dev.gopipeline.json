@@ -9,9 +9,9 @@
   "materials": [
     {
       "pipeline": "hcr-salesforce-worker",
-      "stage": "Deploy",
+      "stage": "READY-FOR-DEV",
       "ignore_for_scheduling": false,
-      "name": "READY-FOR-DEV",
+      "name": "hcr-salesforce-worker",
       "type": "dependency"
     }
   ],
