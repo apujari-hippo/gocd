@@ -1,0 +1,191 @@
+{
+  "group": "staging",
+  "name": "hcr-salesforce-worker-staging",
+  "display_order_weight": -1.0,
+  "label_template": "${COUNT}",
+  "lock_behavior": "none",
+  "environment_variables": [],
+  "parameters": [],
+  "materials": [
+    {
+      "url": "https://github.com/apujari-hippo/gocd.git",
+      "branch": "main",
+      "shallow_clone": false,
+      "filter": {
+        "ignore": [],
+        "includes": []
+      },
+      "auto_update": true,
+      "type": "git"
+    },
+    {
+      "pipeline": "hcr-salesforce-worker-dev",
+      "stage": "update-github-deployment-status-to-success",
+      "ignore_for_scheduling": false,
+      "name": "hcr-salesforce-worker-dev",
+      "type": "dependency"
+    }
+  ],
+  "stages": [
+    {
+      "name": "create-github-deployment",
+      "fetch_materials": true,
+      "never_cleanup_artifacts": false,
+      "clean_working_directory": false,
+      "approval": {
+        "type": "manual",
+        "users": [],
+        "roles": [],
+        "allow_only_on_success": false
+      },
+      "environment_variables": [],
+      "jobs": [
+        {
+          "name": "create-github-deployment-for-hcr-salesforce-worker-in-staging",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "./venv/bin/release",
+              "timeout": -1.0,
+              "arguments": ["create-deployment", "--service-name=hcr-salesforce-worker", "--sha=${GO_REVISION}", "--environment=staging"],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "update-github-deployment-status-to-in-progress",
+      "fetch_materials": true,
+      "never_cleanup_artifacts": false,
+      "clean_working_directory": false,
+      "approval": {
+        "type": "success",
+        "users": [],
+        "roles": [],
+        "allow_only_on_success": false
+      },
+      "environment_variables": [],
+      "jobs": [
+        {
+          "name": "update-github-deployment-status-to-in-progress",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "./venv/bin/release",
+              "timeout": -1.0,
+              "arguments": ["create-status", "--new-state", "in_progress", "--service-name=hcr-salesforce-worker", "--sha=${GO_REVISION}", "--environment=staging"],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tag-image",
+      "fetch_materials": true,
+      "never_cleanup_artifacts": false,
+      "clean_working_directory": false,
+      "approval": {
+        "type": "success",
+        "users": [],
+        "roles": [],
+        "allow_only_on_success": false
+      },
+      "environment_variables": [],
+      "jobs": [
+        {
+          "name": "tag-image-with-the-environment-name-staging",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "./venv/bin/release",
+              "timeout": -1.0,
+              "arguments": ["tag-image", "--role-account-name=infra", "--service-name=insurance-product-editor", "--sha=${GO_REVISION}", "--environment=staging", "--role-name=circleci"],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "restart-service",
+      "fetch_materials": true,
+      "never_cleanup_artifacts": false,
+      "clean_working_directory": false,
+      "approval": {
+        "type": "success",
+        "users": [],
+        "roles": [],
+        "allow_only_on_success": false
+      },
+      "environment_variables": [],
+      "jobs": [
+        {
+          "name": "restart-service-hcr-salesforce-worker-in-staging",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "./venv/bin/release",
+              "timeout": -1.0,
+              "arguments": ["restart", "--role-account-name=prod", "--service-name=hcr-salesforce-worker", "--environment=staging", "--tier=backend", "--role-name=\"circleci\""],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "update-github-deployment-status-to-success",
+      "fetch_materials": true,
+      "never_cleanup_artifacts": false,
+      "clean_working_directory": false,
+      "approval": {
+        "type": "success",
+        "users": [],
+        "roles": [],
+        "allow_only_on_success": false
+      },
+      "environment_variables": [],
+      "jobs": [
+        {
+          "name": "update-github-deployment-status-to-success",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "./venv/bin/release",
+              "timeout": -1.0,
+              "arguments": ["create-status", "--new-state", "success", "--service-name=hcr-salesforce-worker", "--sha=${GO_REVISION}", "--environment=staging"],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
