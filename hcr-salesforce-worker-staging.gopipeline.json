@@ -17,6 +17,7 @@
     {
       "url": "https://github.com/apujari-hippo/gocd.git",
       "branch": "main",
+      "name": "git",
       "shallow_clone": false,
       "filter": {
         "ignore": [],
