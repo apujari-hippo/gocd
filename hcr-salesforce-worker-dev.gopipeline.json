@@ -53,7 +53,7 @@
       ]
     },
     {
-      "name": "update-github-deployment",
+      "name": "update-github-deployment-status-to-in-progress",
       "fetch_materials": true,
       "never_cleanup_artifacts": false,
       "clean_working_directory": false,
@@ -117,38 +117,6 @@
       ]
     },
     {
-      "name": "create-github-deployment",
-      "fetch_materials": true,
-      "never_cleanup_artifacts": false,
-      "clean_working_directory": false,
-      "approval": {
-        "type": "success",
-        "users": [],
-        "roles": [],
-        "allow_only_on_success": false
-      },
-      "environment_variables": [],
-      "jobs": [
-        {
-          "name": "create-github-deployment-for-hcr-salesforce-worker-in-dev",
-          "environment_variables": [],
-          "tabs": [],
-          "resources": [],
-          "artifacts": [],
-          "timeout": 0.0,
-          "tasks": [
-            {
-              "command": "./venv/bin/release",
-              "timeout": -1.0,
-              "arguments": ["create-deployment", "--service-name=hcr-salesforce-worker", "--sha=${SHA}", "--environment=dev"],
-              "run_if": "passed",
-              "type": "exec"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "restart-service",
       "fetch_materials": true,
       "never_cleanup_artifacts": false,
@@ -181,7 +149,7 @@
       ]
     },
     {
-      "name": "update-github-deployment",
+      "name": "update-github-deployment-status-to-success",
       "fetch_materials": true,
       "never_cleanup_artifacts": false,
       "clean_working_directory": false,
