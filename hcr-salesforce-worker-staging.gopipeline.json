@@ -8,6 +8,13 @@
   "parameters": [],
   "materials": [
     {
+      "pipeline": "hcr-salesforce-worker-dev",
+      "stage": "update-github-deployment-status-to-success",
+      "ignore_for_scheduling": false,
+      "name": "hcr-salesforce-worker-dev",
+      "type": "dependency"
+    },
+    {
       "url": "https://github.com/apujari-hippo/gocd.git",
       "branch": "main",
       "shallow_clone": false,
