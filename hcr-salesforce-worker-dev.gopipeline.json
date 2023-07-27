@@ -26,7 +26,7 @@
       "never_cleanup_artifacts": false,
       "clean_working_directory": false,
       "approval": {
-        "type": "success",
+        "type": "manual",
         "users": [],
         "roles": [],
         "allow_only_on_success": false
@@ -45,7 +45,7 @@
               "command": "./venv/bin/release",
               "timeout": -1.0,
               "arguments": ["create-deployment", "--service-name=hcr-salesforce-worker", "--sha=${GO_REVISION}", "--environment=dev"],
-              "run_if": "manual",
+              "run_if": "passed",
               "type": "exec"
             }
           ]
