@@ -17,13 +17,6 @@
       },
       "auto_update": true,
       "type": "git"
-    },
-    {
-      "pipeline": "hcr-salesforce-worker-dev",
-      "stage": "update-github-deployment-status-to-success",
-      "ignore_for_scheduling": false,
-      "name": "hcr-salesforce-worker-dev",
-      "type": "dependency"
     }
   ],
   "stages": [
