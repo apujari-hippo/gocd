@@ -45,7 +45,7 @@
               "command": "echo",
               "timeout": -1.0,
               "arguments": [
-                "Deploying"
+                "Deploying && sleep 10"
               ],
               "run_if": "passed",
               "type": "exec"
