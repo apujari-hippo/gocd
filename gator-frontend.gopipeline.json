@@ -69,7 +69,8 @@
               "run_if": "passed",
               "type": "exec"
             }
-          ]
+          ],
+          "depends_on": ["echoing"]
         }
       ]
     }
