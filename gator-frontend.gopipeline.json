@@ -45,11 +45,21 @@
               "command": "echo",
               "timeout": -1.0,
               "arguments": [
-                "Deploying && sleep 10"
+                "Deploying"
+              ],
+              "run_if": "passed",
+              "type": "exec"
+            },
+            {
+              "command": "sleep",
+              "timeout": -1.0,
+              "arguments": [
+                "10"
               ],
               "run_if": "passed",
               "type": "exec"
             }
+
           ]
         },
         {
